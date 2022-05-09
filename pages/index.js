@@ -82,7 +82,7 @@ export default function IndexPage() {
           fetchExercise4("1234");
         }}
       >
-        Load example Data from Api
+        Remove user via Api
       </button>
       <pre>{data4}</pre>
       <hr />
