@@ -1,4 +1,4 @@
-import { users } from "../../../../db/users";
+import { promises } from "fs";
 
 export default function handler(req, res) {
   if (req.method === "DELETE") {
