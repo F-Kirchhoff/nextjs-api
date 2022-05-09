@@ -1,9 +1,14 @@
-import { users } from "../../../db/users";
+import { promises } from "fs";
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method === "POST") {
-    const data = req.body;
-    console.log(data);
+    const data = await promises.readFile("db/users.json", "utf-8");
+    const users = JSON.parse(data);
+    const newUser = req.body;
+
+    const updatedUsers = [...users, newUser];
+
+    promises.writeFile("db/users.json", JSON.stringify(updatedUsers, null, 4));
     res.json({ message: "New user added!" });
     return;
   }

@@ -12,8 +12,8 @@ export default function IndexPage() {
     setData1(JSON.stringify(data, null, 4));
   }
 
-  async function fetchExercise2() {
-    const res = await fetch("/api/users/627257b4697a866ebc4f42a3");
+  async function fetchExercise2(id) {
+    const res = await fetch(`/api/users/${id}`);
     const data = await res.json();
     setData2(JSON.stringify(data, null, 4));
   }
@@ -54,7 +54,7 @@ export default function IndexPage() {
       <h2>Exercise 2</h2>
       <button
         onClick={() => {
-          fetchExercise2();
+          fetchExercise2("627257b4151dd459c498845b");
         }}
       >
         Load example Data from api/users/[id]
@@ -79,7 +79,7 @@ export default function IndexPage() {
       <h2>Exercise 4</h2>
       <button
         onClick={() => {
-          fetchExercise4("1");
+          fetchExercise4("1234");
         }}
       >
         Load example Data from Api
