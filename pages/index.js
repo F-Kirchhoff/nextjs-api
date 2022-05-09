@@ -79,10 +79,10 @@ export default function IndexPage() {
       <h2>Exercise 4</h2>
       <button
         onClick={() => {
-          fetchExercise4("1");
+          fetchExercise4("1234");
         }}
       >
-        Delete Data via API api/users/[id]/delete
+        Delete user via API
       </button>
       <pre>{data4}</pre>
       <hr />
